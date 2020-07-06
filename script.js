@@ -1,25 +1,30 @@
 // Person constructor
-function Person(name, dob) {
-  this.name = name;
-  // this.age = age;
-  // this.hobby = hobby;
-  // this.eyeColor = eyeColor;
-  // this.hairColor = hairColor;
-  this.birthday = new Date(dob);
-  this.calculateAge = function(){
-    const diff = Date.now() - this.birthday.getTime();
-    const ageDate = new Date(diff);
-    return Math.abs(ageDate.getUTCFullYear() - 1970);
-  }
+
+function Person(firstName, lastName){
+  this.firstName = firstName;
+  this.lastName = lastName;
 }
 
+//Greeting
+Person.prototype.greeting = function(){
+  return `Hello there ${this.firstName} ${this.lastName}`;
+}
 
+const person1 = new Person('John', 'Doe');
 
-// const dave = new Person('david', 38, 'hockey', 'brn', 'brn');
-// const john = new Person('jon');
-// const brad = new Person('brad');
+// console.log(person1.greeting());
 
-// console.log(dave);
+// Customer constructor
+function Customer(firstName, lastName, phone, membership) {
+  Person.call(this, firstName, lastName);
 
-const dave = new Person('David Harbin', '12/13/1981');
-console.log(dave.calculateAge());
+  this.phone = phone;
+  this.membership = membership;
+}
+
+// Create customer
+const customer1 = new Customer('Tom', 'Smith', '555-555-5555', 'Standard');
+
+console.log(customer1);
+
+console.log(customer1.greeting());
