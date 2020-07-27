@@ -15,6 +15,7 @@ function Person(firstName, lastName, dob){
 const john = new Person('John', 'Doe', '8/12/90');
 const mary = new Person('Mary', 'Johnson', 'March 20 1978');
 
+
 console.log(mary);
 
 
@@ -29,3 +30,6 @@ function indexOfString(string1, string2) {
       }
   }
 }
+
+console.log(mary);
+ f442f5537f83655ce8fe417e4bbc345074d8fea8
