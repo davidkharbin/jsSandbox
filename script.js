@@ -1,21 +1,14 @@
-// function removeChar(str){
-  
-//   let newStr = [];
+var fruits = ['oranges', 'bananas', 'apples'];
+var scores = [98, 85, 91, 78, 82];
+var empty = [];
 
-//   for (let i = 1; i < str.length - 1; i++) {
-//     newStr[i - 1] = str[i];
-//   }
-
-//   newStr = newStr.join('');
-//   console.log(newStr);
-//   console.log(typeof newStr);
-// };
-
-// removeChar('eloquent');
-
-function removeChar(str) {
-  return str = str.slice(1, -1);
-}
+console.log('fruits:', fruits);
+console.log('scores:', scores);
+console.log('empty:', empty);
 
 
-console.log(removeChar("helloHello"));
+let tempVar = 'oranges';
+
+console.log(tempVar.indexOf('r'));
+
+
