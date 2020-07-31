@@ -1,14 +1,16 @@
 // Object.prototype
 // Person.prototype
 
-function Person(firstName, lastName, dob){
-  this.firstName = firstName;
-  this.lastName = lastName;
-  this.birthday = new Date(dob);
-  this.calculateAge = function(){
-    const diff = Date.now() - this.birthday.getTime();
-    const ageDate = new Date(diff);
-    return Math.abs(ageDate.getUTCFullYear() - 1970);
+class Person {
+  constructor(firstName, lastName, dob) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.birthday = new Date(dob);
+    this.calculateAge = function () {
+      const diff = Date.now() - this.birthday.getTime();
+      const ageDate = new Date(diff);
+      return Math.abs(ageDate.getUTCFullYear() - 1970);
+    };
   }
 }
 

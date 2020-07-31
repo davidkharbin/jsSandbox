@@ -1,7 +1,21 @@
-let n = 348597;
+// function removeChar(str){
+  
+//   let newStr = [];
 
-function digitize(n) {
-  return Array.from(String(n), Number).reverse()
-};
+//   for (let i = 1; i < str.length - 1; i++) {
+//     newStr[i - 1] = str[i];
+//   }
 
-console.log(digitize(n));
+//   newStr = newStr.join('');
+//   console.log(newStr);
+//   console.log(typeof newStr);
+// };
+
+// removeChar('eloquent');
+
+function removeChar(str) {
+  return str = str.slice(1, -1);
+}
+
+
+console.log(removeChar("helloHello"));
