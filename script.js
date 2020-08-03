@@ -1,21 +1,13 @@
-var resultBoolean1 = isAnObject([1, 2, 3]);
-console.log('should log false:', resultBoolean1);
+var colors = [
+/*0*/  ['red'], 
+/*1*/  'orange', 
+/*2*/  ['yellow',['green', ['blue']]],
+/*3*/   ['indigo', 'violet']];
 
-var resultBoolean2 = isAnObject({name: 'Tom', friend: 'Jerry'});
-console.log('should log true:', resultBoolean2);
-
-function isAnObject(input) {
-    
-    isObject = tyepof input === "object";
-    isNotAnArray = (!Array.isArray(object));
-    
-    return isObjectAndNotAnArray = (isObject && isNotAnArray);
-    
-  // create an isObject variable
-  // assign it to whether the input is an object type
-  // create an isNotAnArray variable
-  // assign it to whether the input is not an array
-  // create an isObjectAndNotAnArray variable
-  // assign it to a combination of isObject AND isNotAnArray
-  // return the isObjectAndNotAnArray variable
-};
+console.log(colors[2][1][1][0]);//blue
+console.log(colors[2][1][0]);//green
+console.log(colors[3][0]);//indigo
+console.log(colors[1]);//orange
+console.log(colors[0][0]);//red
+console.log(colors[3][1]);//violet
+console.log(colors[2][0]);//yellow
