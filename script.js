@@ -1,13 +1,29 @@
-var colors = [
-/*0*/  ['red'], 
-/*1*/  'orange', 
-/*2*/  ['yellow',['green', ['blue']]],
-/*3*/   ['indigo', 'violet']];
+var result1 = measureRequiredFruit({bananas: 4, strawberries: 12});
+console.log('should log "We have enough fruit, with 4 bananas, and 12 strawberries":', result1);
 
-console.log(colors[2][1][1][0]);//blue
-console.log(colors[2][1][0]);//green
-console.log(colors[3][0]);//indigo
-console.log(colors[1]);//orange
-console.log(colors[0][0]);//red
-console.log(colors[3][1]);//violet
-console.log(colors[2][0]);//yellow
+var result2 = measureRequiredFruit({bananas: 5, strawberries: 15});
+console.log('should log "We have enough fruit, with 5 bananas, and 15 strawberries":', result2);
+
+var result3 = measureRequiredFruit({bananas: 2, strawberries: 12});
+console.log('should log "We do not have enough of both fruits":', result3);
+
+var result4 = measureRequiredFruit({bananas: 5, strawberries: 8});
+console.log('should log "We do not have enough of both fruits":', result4);
+
+var result5 = measureRequiredFruit({bananas: 3, strawberries: 9});
+console.log('should log "We do not have enough of both fruits":', result5);
+
+
+function measureRequiredFruit(fruitTotals) {
+    
+  if( fruitTotals.bananas > 3 && fruitTotals.strawberries > 10){
+      return `We have engough fruit, with ${fruitTotals.bananas} bananas, and ${fruitTotals.strawberries} strawberries`
+  } else {
+      return `We do not have enough of both fruits`
+  }
+  
+// if there are more than 3 bananas and more than 10 strawberries
+  // return 'We have enough fruit, with {totalBananas} bananas, and {totalStrawberries} strawberries'
+// otherwise
+  // return 'We do not have enough of both fruits'
+}
