@@ -1,13 +1,10 @@
-var colors = [
-/*0*/  ['red'], 
-/*1*/  'orange', 
-/*2*/  ['yellow',['green', ['blue']]],
-/*3*/   ['indigo', 'violet']];
+var object = {
+  key1: [0, 3, 4],
+  key2: 'Tovio'
+};
+console.log('accessing the inner array:', object['key1']);
 
-console.log(colors[2][1][1][0]);//blue
-console.log(colors[2][1][0]);//green
-console.log(colors[3][0]);//indigo
-console.log(colors[1]);//orange
-console.log(colors[0][0]);//red
-console.log(colors[3][1]);//violet
-console.log(colors[2][0]);//yellow
+console.log('value is an array:', Array.isArray(object['key1']));
+console.log('value is an array:', Array.isArray(object['key2']));;
+
+
