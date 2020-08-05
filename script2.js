@@ -1,6 +1,21 @@
 // Object.prototype
 // Person.prototype
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class Person {
   constructor(firstName, lastName, dob) {
     this.firstName = firstName;
@@ -35,3 +50,29 @@ function indexOfString(string1, string2) {
 
 console.log(mary);
  f442f5537f83655ce8fe417e4bbc345074d8fea8
+
+
+
+
+
+
+
+
+
+ var result1 = generateReportSummary({a_team: 12, b_team: 7, c_team: 0}, 'b_team');
+console.log('should log "b_team has surpassed goal with 7 reports":', result1);
+
+var result2 = generateReportSummary({blue: 18, red: 8, green: 12}, 'blue');
+console.log('should log "blue has surpassed goal with 18 reports":', result2);
+
+var result3 = generateReportSummary({gamma: 1, epsilon: 3, alpha: 4, bravo: 17}, 'alpha');
+console.log('Should log undefined, because function returned nothing:', result3);
+
+function generateReportSummary(reportTotals, teamName) {
+
+  if(reportTotals[teamName] > 5){
+    return `${teamName} has surpassed goal with ${reportTotals[teamName]} reports`
+  }
+  // if teamName's report total is greater than 5
+    // return '{teamName} has surpassed goal with {number_of_reports_for_team} reports'
+}
