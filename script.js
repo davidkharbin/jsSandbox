@@ -17,7 +17,7 @@ console.log('should log "We do not have enough of both fruits":', result5);
 function measureRequiredFruit(fruitTotals) {
     
   if( fruitTotals.bananas > 3 && fruitTotals.strawberries > 10){
-      return `We have engough fruit, with ${fruitTotals.bananas} bananas, and ${fruitTotals.strawberries} strawberries`
+      return `We have enough fruit, with ${fruitTotals.bananas} bananas, and ${fruitTotals.strawberries} strawberries`
   } else {
       return `We do not have enough of both fruits`
   }
