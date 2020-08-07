@@ -1,34 +1,34 @@
-loopAnObjectOfArrays({ 
-  first: [1, 2, 5], 
-  second: [6, 14, 21] 
-});
+generateCombinations(['a', 'b', 'c'], ['d', 'e', 'f']);
 // console output:
-  // 1
-  // 2
-  // 5
-  // 6
-  // 14
-  // 21
+  // a d
+  // a e
+  // a f
+  // b d
+  // b e
+  // b f
+  // c d
+  // c e
+  // c f
 
-loopAnObjectOfArrays({ third: [false, false], fourth: ['runs'], ninth: ['q', 'l', 'z'] });
+generateCombinations([1, 2], ['buckle', 'my', 'shoe']);
 // console output:
-  // false
-  // false
-  // runs
-  // q
-  // l
-  // z
+  // 1 buckle
+  // 1 my
+  // 1 shoe
+  // 2 buckle
+  // 2 my
+  // 2 shoe
 
-     
 
-function loopAnObjectOfArrays(objectOfArrays) {
+
+function generateCombinations(array1, array2) {
     
-  for(key in objectOfArrays){
-      for(let i = 0; i < objectOfArrays[key].length; i++){
-          console.log(objectOfArrays[key][i])
+  for(let i = 0; i < array1.length; i++){
+      for(let j = 0; j < array2.length; j++){
+          console.log(`${array1[i]} ${array2[j]}`)
       }
   }
-// create a loop which iterates over the input object
-  // create an inner loop which iterates over current inner array
-    // log current value to the console
+// create a loop which iterates over the first array
+  // create an inner loop which iterates over the second array
+    // log current element of first array and current element of second array to the console with space in between
 }
