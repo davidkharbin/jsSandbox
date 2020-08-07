@@ -1,18 +1,34 @@
-var holidays = {
-  christian: 'Christmas',
-  american: ['Memorial Day', 'Labor Day'],
-  muslim: 'Ramadan',
-  hindu:'Holi'
-};
+generateCombinations(['a', 'b', 'c'], ['d', 'e', 'f']);
+// console output:
+  // a d
+  // a e
+  // a f
+  // b d
+  // b e
+  // b f
+  // c d
+  // c e
+  // c f
 
-var valueOfAmericanHolidays = holidays.american
-console.log('accessing the inner array value:', valueOfAmericanHolidays); //Array>mem day, labor day
+generateCombinations([1, 2], ['buckle', 'my', 'shoe']);
+// console output:
+  // 1 buckle
+  // 1 my
+  // 1 shoe
+  // 2 buckle
+  // 2 my
+  // 2 shoe
 
-var isAmericanValueAnArray = Array.isArray(valueOfAmericanHolidays); 
-console.log('american value within holidays is an array:', isAmericanValueAnArray); //true
 
-var valueOfHinduHoliday = holidays['hindu'];
-console.log('accessing the value:', valueOfHinduHoliday); //Holil
 
-var isHinduValueAnArray = Array.isArray(valueOfHinduHoliday);
-console.log('hindu value within holidays is an array:', isHinduValueAnArray);  //false
+function generateCombinations(array1, array2) {
+    
+  for(let i = 0; i < array1.length; i++){
+      for(let j = 0; j < array2.length; j++){
+          console.log(`${array1[i]} ${array2[j]}`)
+      }
+  }
+// create a loop which iterates over the first array
+  // create an inner loop which iterates over the second array
+    // log current element of first array and current element of second array to the console with space in between
+}
