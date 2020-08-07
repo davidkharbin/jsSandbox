@@ -1,18 +1,34 @@
-var holidays = {
-  christian: 'Christmas',
-  american: ['Memorial Day', 'Labor Day'],
-  muslim: 'Ramadan',
-  hindu:'Holi'
-};
+loopAnObjectOfArrays({ 
+  first: [1, 2, 5], 
+  second: [6, 14, 21] 
+});
+// console output:
+  // 1
+  // 2
+  // 5
+  // 6
+  // 14
+  // 21
 
-var valueOfAmericanHolidays = holidays.american
-console.log('accessing the inner array value:', valueOfAmericanHolidays); //Array>mem day, labor day
+loopAnObjectOfArrays({ third: [false, false], fourth: ['runs'], ninth: ['q', 'l', 'z'] });
+// console output:
+  // false
+  // false
+  // runs
+  // q
+  // l
+  // z
 
-var isAmericanValueAnArray = Array.isArray(valueOfAmericanHolidays); 
-console.log('american value within holidays is an array:', isAmericanValueAnArray); //true
+     
 
-var valueOfHinduHoliday = holidays['hindu'];
-console.log('accessing the value:', valueOfHinduHoliday); //Holil
-
-var isHinduValueAnArray = Array.isArray(valueOfHinduHoliday);
-console.log('hindu value within holidays is an array:', isHinduValueAnArray);  //false
+function loopAnObjectOfArrays(objectOfArrays) {
+    
+  for(key in objectOfArrays){
+      for(let i = 0; i < objectOfArrays[key].length; i++){
+          console.log(objectOfArrays[key][i])
+      }
+  }
+// create a loop which iterates over the input object
+  // create an inner loop which iterates over current inner array
+    // log current value to the console
+}
