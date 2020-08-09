@@ -23,4 +23,5 @@ var result1 = countAllCharacters('banana');
 console.log('should log "{b: 1, a: 3, n: 2}":', result1);
 
 var result2 = countAllCharacters('');
-console.log('should log "{}":', result2);
+console.log('should log "{}":', result2); 
+
