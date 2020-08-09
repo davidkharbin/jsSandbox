@@ -1,34 +1,26 @@
-generateCombinations(['a', 'b', 'c'], ['d', 'e', 'f']);
-// console output:
-  // a d
-  // a e
-  // a f
-  // b d
-  // b e
-  // b f
-  // c d
-  // c e
-  // c f
-
-generateCombinations([1, 2], ['buckle', 'my', 'shoe']);
-// console output:
-  // 1 buckle
-  // 1 my
-  // 1 shoe
-  // 2 buckle
-  // 2 my
-  // 2 shoe
-
-
-
-function generateCombinations(array1, array2) {
-    
-  for(let i = 0; i < array1.length; i++){
-      for(let j = 0; j < array2.length; j++){
-          console.log(`${array1[i]} ${array2[j]}`)
-      }
+function countAllCharacters(string) {
+  if(string === '') {
+      return {};
   }
-// create a loop which iterates over the first array
-  // create an inner loop which iterates over the second array
-    // log current element of first array and current element of second array to the console with space in between
+  
+  let characterObj = {};
+  let characterArray = string.split('');
+
+  for(let i = 0; i < characterArray.length; i++) {
+    let currentChar = characterArray[i];
+
+    if(characterObj[currentChar] === undefined) {
+      characterObj[currentChar] = 1;
+    } else {
+      characterObj[currentChar]++;
+    }
+  }
+  return characterObj;
 }
+
+
+var result1 = countAllCharacters('banana');
+console.log('should log "{b: 1, a: 3, n: 2}":', result1);
+
+var result2 = countAllCharacters('');
+console.log('should log "{}":', result2);
