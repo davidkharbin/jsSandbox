@@ -1,12 +1,22 @@
-var output = countCharacter('I am a hacker', 'a');
-console.log(output); // --> 3
+var obj = {
+  key: [1, 2, 3]
+};
+var output = getAverageOfElementsAtProperty(obj, 'key');
+console.log(output); // --> 2
 
-function countCharacter(str, char) {
-  let count = 0;
-  for (i = 0; i < str.length; i++){
-      if (str[i] === char){
-          count++;
-      }
+
+function getAverageOfElementsAtProperty(obj, key) {
+    
+  if ((obj.key === undefined) || (obj.key.length === 0) || (!Array.isArray(obj.key))){
+      return 0
   }
-  return count
+  
+  let sum = 0;
+  
+  for (let i = 0; i < obj[key].length; i++){
+      sum += obj[key][i];
+  }
+  
+  return sum / obj[key].length;
 }
+
