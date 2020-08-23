@@ -1,17 +1,18 @@
-var output = convertScoreToGrade(91);
-console.log(output); // --> 'A'
+var output = multiplyBetween(2, 5);
+console.log(output); // --> 24
 
 
-function convertScoreToGrade(score) {
-  if (score > 100 || score < 0){
-      return 'INVALID SCORE'
-  }
-  let grade = '';
-  switch (score) {
-      case (score <= 100 || score >= 90):
-          grade = 'A';
-          break;
+
+function multiplyBetween(num1, num2) {
+  if (num2 <= num1){
+      return 0
   }
   
-  return grade
+  
+  let product = 1;
+  for (i = num1; i < num2; i++){
+     product *= i;
+  }
+
+  return product
 }
