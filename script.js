@@ -1,18 +1,32 @@
-var output = multiplyBetween(2, 5);
-console.log(output); // --> 24
+
+var customerData = {
+  'Joe': {
+    visits: 1
+  },
+  'Carol': {
+    visits: 2
+  },
+  'Howard': {
+    visits: 3,
+  },
+  'Carrie': {
+    visits: 4
+  }
+};
+
+var output = greetCustomer('Carrie');
+console.log(output);
 
 
-
-function multiplyBetween(num1, num2) {
-  if (num2 <= num1){
-      return 0
+function greetCustomer(firstName) {
+  if (customerData[firstName] === undefined){
+      return 'Welcome! Is this your first time?';
   }
   
-  
-  let product = 1;
-  for (i = num1; i < num2; i++){
-     product *= i;
+  // var visitsObject = customerData[firstName];
+  if (customerData[firstName]['visits'] === 1){
+      return "Welcome back, " + firstName + "! We're glad you liked us the first time!";
+  } else {
+      return "Welcome back, " + firstName + "! So glad to see you again!";
   }
-
-  return product
 }
