@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // FUNCTION DEFINITION(S)
 function square(n) {
   return n * n;
@@ -33,3 +34,5 @@ assertEqual(actual_3, expected_3, 'Should square zero.');
 let actual_4 = square(0.5);
 let expected_4 = 0.25;
 assertEqual(actual_4, expected_4, 'Should square a decimal number.');
+=======
+>>>>>>> 8d3359e553db04c3945c4e8ded5790fe20c6113d
