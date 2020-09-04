@@ -1,36 +1,39 @@
+// Note: This is a simple, albeit temporarily incorrect implementation of the standard Array method "every()":
+// https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/every
 
 // FUNCTION DEFINITION(S)
-function square(n) {
-  return n * n;
-}
-
-// ASSERTION FUNCTION(S) TO BE USED
-function assertEqual(actual, expected, testName) {
-    if (actual === expected) {
-        console.log(`Test Name: [${testName}] PASSED!`);
-    } else {
-        console.log(`Failed: Expected ${expected} but got ${actual}`);
+function every(array, callbackFunction) {
+    var doesEveryElementMatch = true;
+  
+    for (var i = 0; i < array.length; i++) {
+      
+      if (doesEveryElementMatch === false) {
+          return doesEveryElementMatch;
+      }
+      doesEveryElementMatch = callbackFunction(array[i]);
     }
-}
+  
+    return doesEveryElementMatch;
+  }
+  
+  // ASSERTION FUNCTION(S) TO BE USED
+  function assertEqual(actual, expected, testName) {
+      if (actual === expected) {
+          console.log('passed');
+      } else {
+          console.log(`FAILED [${testName}]: Expected ${expected} but got ${actual}`);
+      }
+  }
+  
+  // TESTS CASES
+  function lessThan10(val) {
+      return val < 10;
+  }
 
-// TESTS CASES
+  let arrayTrue = [1, 3, 9, 2, 7];
+  let actualTrue = every(arrayTrue, lessThan10);
+  assertEqual(actualTrue, true, 'should return true when all values are true');
 
-// positive
-let actual_1 = square(3);
-let expected_1 = 9;
-assertEqual(actual_1, expected_1, 'Should square a positive integer.');
-
-// negative
-let actual_2 = square(-4);
-let expected_2 = 16;
-assertEqual(actual_2, expected_2, 'Should square a negative integer.');
-
-// zero
-let actual_3 = square(0);
-let expected_3 = 0;
-assertEqual(actual_3, expected_3, 'Should square zero.');
-
-// decimal
-let actual_4 = square(0.5);
-let expected_4 = 0.25;
-assertEqual(actual_4, expected_4, 'Should square a decimal number.');
+  let arrayFalse = [1, 1, 9, 2, 17];
+  let actualFalse = every(arrayFalse, lessThan10);
+  assertEqual(actualFalse, false, 'should return false if any array value is false');
