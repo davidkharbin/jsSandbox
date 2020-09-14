@@ -1,12 +1,28 @@
-var output = getIndexOf('a', 'I am a hacker');
-console.log(output); // --> 2
+var output = sumDigits(-316);
+console.log(output); // --> 4
 
-function getIndexOf(char, str) {
-  for (let i = 0; i < str.length; i++) {
-      if (str[i] === char) {
-          return i;
-      } else {
-        return -1;
-      }
+var output = sumDigits(1148);
+console.log(output); // --> 14
+
+function sumDigits(num) {
+  let sum = 0;
+  let isNegative = false;
+  if (num < 0) {
+      isNegative = true;
   }
+  
+  if (isNegative) {
+    let numArray = Array.from(num);
+    for (let i = 1; i < numArray.length; i++) {
+      sum += numArray[i];
+    }
+  } else {
+    let numArray = Array.from(num);
+    for (let i = 0; i < numArray.length; i++) {
+      sum += numArray[i];
+    }
+    
+  }
+
+  
 }
