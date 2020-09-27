@@ -4,23 +4,23 @@
 function findMaxRepeatCountInWord(word) {
   // Break up individual word into individual letters.
   let letters = word.split('');
-  let letterCount = {};
+  let letterObj = {};
 
   // Count the instances of each letter
   for (let i = 0; i < letters.length; i++) {
     let currentLetter = letters[i];
-    if (letterCount[currentLetter] === undefined) {
-      letterCount[currentLetter] = 1;
+    if (letterObj[currentLetter] === undefined) {
+      letterObj[currentLetter] = 1;
     } else {
-      letterCount[currentLetter]++; 
+      letterObj[currentLetter]++; 
     }
   };
   
   // Iterate all the counts and find the highest
   let max = 0;
-  for (let letter in letterCount) {
-    if (letterCount[letter] > max) {
-      max = letterCount[letter];
+  for (let letter in letterObj) {
+    if (letterObj[letter] > max) {
+      max = letterObj[letter];
     }
   };
 
