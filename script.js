@@ -1,55 +1,31 @@
-// Skeleton
 
-// FUNCTION DEFINITION(S)
-function findLongestPalindrome(sentence) {
-  let palindromesArray = [];  
-  
-  // split sentence into words
-  let wordArray = sentence.split(' ');
-  // iterate words and collect the palindromes
-  for (let i = 0; i < wordArray.length; i++) {
-      let currentWord = wordArray[i];
-      if (isPalindrome(currentWord)) {
-          palindromesArray.push(currentWord);
+  var getPrefix = function(strNums, n) {
+    var arrNums = strNums.split('');
+    var numsOnly = [];
+    for (let i = 0; i < arrNums.length; i++) {
+      if (!isNaN(arrNums[i])) {
+        numsOnly.push(arrNums[i])
       }
-      // sort the list of palindromes by word length
-      
+    }
+    return numsOnly.join('').substring(0, n);
+  };
+
+  // if (cardNumber.length === 14 && (getPrefix(cardNumber, 2) === '38' || getPrefix(cardNumber, 2) === '39')) {
+  //   return 'Diner\'s Club';
+  // } else if (cardNumber.length === 15 && (getPrefix(cardNumber, 2) === '34' || getPrefix(cardNumber, 2) === '37')) {
+  //   return 'American Express';
+  // } else if ((cardNumber.length === 13 || cardNumber.length === 16 || cardNumber.length === 19) && getPrefix(cardNumber, 1) === '4') {
+  //   return 'Visa';
+  // } else if (cardNumber.length === 16 && (getPrefix(cardNumber, 2) === '51') || (getPrefix(cardNumber, 2) === '52') || (getPrefix(cardNumber, 2) === '53') || (getPrefix(cardNumber, 2) === '54') || (getPrefix(cardNumber, 2) === '55')) {
+  //   return 'MasterCard';
+  // }
+
+  let testString = '644-649890123456789';
+  console.log(getPrefix(testString, 6))
+  // console.log((typeof getPrefix(testString, 4)))
+
+  console.log('5018' > '5017')
+
+  for (let i = '0'; i < '10'; i++) {
+    console.log(typeof i);
   }
-  
-  
-  // return the largest item in the sorted list
-  let longestPalindrome = palindromesArray[0];
-  for (let j = 0; j < palindromesArray.length; j++) {
-      if (palindromesArray[j].length >= longestPalindrome.length) {
-          longestPalindrome = palindromesArray[j];
-      }
-  }
-  return longestPalindrome;
-}
-
-function reverseString(string) {
-  let reversedString = string.split("").reverse().join("");
-  return reversedString;
-}
-
-function isPalindrome(word) {
-  // hint: you can detect palindromes by comparing a string to its reverse
-  if (reverseString(word).toLowerCase() === word.toLowerCase()) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
-function sortAscendingByLength(a, b) {
-  if (a.length > b.length) {
-    return 1;
-  } else if (a.length < b.length) {
-    return -1;
-  }
-  return 0;
-}
-
-// ASSERTION FUNCTION(S) TO BE USED
-
-// TESTS CASES
