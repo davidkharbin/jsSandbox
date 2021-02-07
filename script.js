@@ -11,8 +11,11 @@ var _each = function(collection, callback) {
   //   }
   // }
 };
-
+var passed = [];
 _each([1, 2, 3, 4, 45, 54, 44, 33, 21, 12, 12, 66], function(f, index, a) {
-  console.log(index, f, 'isEven', f % 2 === 0);
+  if (f % 2 === 0) {
+    passed.push(f);
+  }
 });
 
+console.log(passed);
