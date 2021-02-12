@@ -31,12 +31,7 @@ var aFoil = function() {
   return foils[Math.floor(Math.random()*foils.length)];
 };
 
-
-
-
-
 var hero = aHero();
-
 var newSaga = function() {
   var foil = aFoil();
   var saga = function() {
@@ -46,6 +41,5 @@ var newSaga = function() {
   saga();
   saga();
 };
-
 newSaga();
 newSaga();
