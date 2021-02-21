@@ -1,17 +1,38 @@
-expandedForm(12); // Should return '10 + 2'
-expandedForm(42); // Should return '40 + 2'
-expandedForm(70304); // Should return '70000 + 300 + 4'
+// Create a function that accepts dimensions, of Rows x Columns, as parameters in order to create a multiplication table sized according to the given dimensions. **The return value of the function must be an array, and the numbers must be Fixnums, NOT strings.
 
-function expandedForm(num) {
-  var nums = Array.from(String(num), Number);
-  var numStrings = [];
+// Example:
 
-  for (var i = 0; i < nums.length; i++) {
-    var zeros = new Array((nums.length - 1) - i).fill(0);
-    var num = (`${nums[i]}${zeros.join('')}`);
-    if (num > 0) {
-      numStrings.push(num);
+// multiplication_table(3,3)
+
+// 1 2 3
+// 2 4 6
+// 3 6 9
+
+// -->[[1,2,3],[2,4,6],[3,6,9]]
+
+// Each value on the table should be equal to the value of multiplying the number in its first row times the number in its first column.
+
+
+function multiplicationTable(row,col){
+  // create the matrix
+  var matrix = [];
+  for (var i = 0; i < row; i++) {
+    matrix.push(new Array(col));
+  }
+
+  // populate the first row
+  for (var j = 0; j < col; j++) {
+    matrix[0][j] = j + 1;
+  }
+
+  // populate the other rows
+  for (var k = 1; k < matrix.length; k++) {
+    for (var m = 0; m < col; m++) {
+      matrix[k][m] = (matrix[0][m]) * (k+1);
     }
   }
-  return numStrings.join(' + ');
-};
+  return matrix;
+}
+
+
+console.log(multiplicationTable(8, 3));
