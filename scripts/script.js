@@ -1,38 +1,17 @@
+expandedForm(12); // Should return '10 + 2'
+expandedForm(42); // Should return '40 + 2'
+expandedForm(70304); // Should return '70000 + 300 + 4'
 
-console.log(decipherThis('72olle 103doo 100ya'));
-console.log(decipherThis('82yade 115te 103o'));
-; // 'Hello good day'
-; // 'Ready set go'
+function expandedForm(num) {
+  var nums = Array.from(String(num), Number);
+  var numStrings = [];
 
-
-function decipherThis(str) {
-  var words = str.split(' ');
-  for (var i = 0; i < words.length; i++) {
-    var word = words[i];
-    words[i] = decoded(word);
-  }
-  return words.join(' ');
-
-
-  function decoded(word) {
-    var firstLetter = '';
-    var secondLetter;
-    var lastLetter;
-    var decodedWord;
-    var i = 0;
-    // Get the character code of the first letter
-    while (!isNaN(Number(word[i]))) {
-      firstLetter += word[i];
-      i++;
+  for (var i = 0; i < nums.length; i++) {
+    var zeros = new Array((nums.length - 1) - i).fill(0);
+    var num = (`${nums[i]}${zeros.join('')}`);
+    if (num > 0) {
+      numStrings.push(num);
     }
-    word = word.substring(i, word.length).split('');
-
-    firstLetter = String.fromCharCode(firstLetter);
-    secondLetter = word[word.length - 1];
-    lastLetter = word[0];
-    word[0] = secondLetter;
-    word[word.length - 1] = lastLetter;
-    decodedWord = firstLetter + word.join('');
-    return  decodedWord;
-  };
+  }
+  return numStrings.join(' + ');
 };
