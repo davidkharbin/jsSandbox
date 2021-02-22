@@ -1,38 +1,30 @@
-// Create a function that accepts dimensions, of Rows x Columns, as parameters in order to create a multiplication table sized according to the given dimensions. **The return value of the function must be an array, and the numbers must be Fixnums, NOT strings.
+// A pangram is a sentence that contains every single letter of the alphabet at least once. For example, the sentence "The quick brown fox jumps over the lazy dog" is a pangram, because it uses the letters A-Z at least once (case is irrelevant).
 
-// Example:
-
-// multiplication_table(3,3)
-
-// 1 2 3
-// 2 4 6
-// 3 6 9
-
-// -->[[1,2,3],[2,4,6],[3,6,9]]
-
-// Each value on the table should be equal to the value of multiplying the number in its first row times the number in its first column.
+// Given a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.
 
 
-function multiplicationTable(row,col){
-  // create the matrix
-  var matrix = [];
-  for (var i = 0; i < row; i++) {
-    matrix.push(new Array(col));
+function isPangram(string){
+  var string = string.toLowerCase();
+  var pangram = true;
+  var asciis = [];
+
+  // get array of ascii codes
+  for (var i = 0; i < string.length; i++) {
+    var asciiCode = string.charCodeAt(i);
+    asciis.push(asciiCode);
   }
 
-  // populate the first row
-  for (var j = 0; j < col; j++) {
-    matrix[0][j] = j + 1;
-  }
-
-  // populate the other rows
-  for (var k = 1; k < matrix.length; k++) {
-    for (var m = 0; m < col; m++) {
-      matrix[k][m] = (matrix[0][m]) * (k+1);
+  // see if the ascii code (97 - 122)
+  // exist in the array of ascii codes
+  for (var j = 97; j <= 122; j++) {
+    if (!asciis.includes(j)) {
+      pangram = false;
+      break;
     }
   }
-  return matrix;
-}
+  return pangram;
+};
 
+console.log(isPangram('The QUICK something a SOMETHING SOMETHING!!.'));
 
-console.log(multiplicationTable(8, 3));
+console.log(isPangram('the quick brown fox jumps over the lazy dog'));
