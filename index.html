@@ -6,13 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="/styles/main.css">
-  <script src="/scripts/jquery-3.5.1.js"></script>
-  <script src="/scripts/script.js"></script>
+  <!-- <script src="/scripts/jquery-3.5.1.js"></script> -->
+  <!-- <script src="/scripts/script.js"></script> -->
 
 </head>
-<body>
-  <a href="http://jquery.com/">jQuery</a>
+<body id = "target">
+  <button id= "beeperOne">Beeper</button>
+  <button class = "beeperTwo">Beeper 2</button>
+  <button class = "beeperThree">Beeper 3</button>
+  <div><p id = "output">HEY</p>
+  <p>testing paragraph</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus ea illo similique sint magnam! Ad perspiciatis veniam distinctio mollitia a?</p>
+  <p>Blanditiis doloremque eligendi enim perferendis ab aperiam debitis, quibusdam delectus tempore temporibus ad. Deserunt vero sequi unde vitae, accusamus sunt!</p>
+  <p>Laboriosam, nam quae voluptas doloribus, deleniti cupiditate non numquam vel ab, nostrum rem accusamus odio eos officia nisi voluptatum est.</p>
+  <p>Quaerat, fugiat itaque, earum provident ratione corporis culpa, velit temporibus similique ea necessitatibus dolorem impedit veritatis! Eligendi non asperiores expedita.</p></div>
 
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente aliquam enim hic quidem, cupiditate facere quos soluta! Ad harum eveniet nemo delectus distinctio exercitationem culpa earum fugit odio dolorem ea hic, dolore quis molestiae aliquam similique quasi at ipsa dignissimos, debitis rem laboriosam. Itaque, sit doloremque dolorem nam ullam, reprehenderit eius repudiandae, rerum earum minus nihil. Amet ad nemo, eos id at recusandae aperiam ipsum facere, suscipit molestias quasi. Officiis commodi iste molestiae magnam placeat hic, adipisci nostrum praesentium, accusantium exercitationem, deleniti enim porro non? Eaque veritatis fugiat odit quos, quasi voluptas. Dolor maxime iusto, facere non dignissimos recusandae consequatur rerum tempora beatae quos distinctio magnam ex, a debitis aut, excepturi harum! Corrupti ducimus quas necessitatibus repellendus nemo architecto blanditiis ut est. Ab eos non quas quo numquam deserunt nam laborum corrupti fugit dignissimos id itaque reprehenderit, rem quod maxime error ratione! Placeat excepturi cupiditate ducimus impedit neque quod natus eum rerum, accusamus provident sapiente veniam ipsum voluptatibus repellendus minima, cum, eius asperiores? Saepe quia error magnam nesciunt sequi, sunt quo tenetur, nam excepturi, possimus animi quam! Nostrum aspernatur ipsa laboriosam voluptatibus eveniet rem iusto? Sit assumenda quisquam optio, excepturi, repudiandae adipisci saepe necessitatibus sunt perspiciatis repellat reprehenderit voluptates nihil quod consequuntur modi? Officia quasi, esse provident tempora hic, blanditiis nobis asperiores quia illo laudantium est dicta itaque! Dignissimos tempore possimus cumque enim amet laborum accusantium nobis sequi omnis ipsam deleniti nulla necessitatibus porro maxime et animi vitae neque, odit deserunt. Voluptatem, laborum aliquid.</p>
+  <input id = "color"></input>
+  <button id = "go">Click Me</button>
+  <ul>
+    <li>asdfl</li>
+    <li>l</li>
+    <li>sadfdi</li>
+    <li>dddddd</li>
+  </ul>
+<script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+<script>
+$('button#go').on('click', function(){
+  $('p#output').text( $('input#color').val() ).css('color', 'red');
+});
+
+
+$('ul').append('<li>Here is the new one</li>');
+</script>
 </body>
 </html>
