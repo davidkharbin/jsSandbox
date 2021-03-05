@@ -1,6 +1,16 @@
-// A $( document ).ready() block.
-$( document ).ready(function() {
-  console.log( "ready!" );
+// Person object (literal)
+var person = {
+    firstName: 'David',
+    lastName: 'Harbin',
+    getFullName: function() {
 
-  $('img').src = 'https://cdn1-www.dogtime.com/assets/uploads/2017/09/pit-bull-puppies-3-720x407.jpg';
-});
+      return `${this.firstName} ${this.lastName}`;
+    }
+}
+
+var logName = function(lang1, lang2) {
+    console.log('Logged:  ' + this.getFullName() + '\n' + 'Args: ' + lang1, lang2);
+};
+
+var languages = ['es', 'en'];
+logName.apply(person, languages);
