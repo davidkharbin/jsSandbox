@@ -1,16 +1,17 @@
-// Person object (literal)
-var person = {
-    firstName: 'David',
-    lastName: 'Harbin',
-    getFullName: function() {
+decodeMorse = function(morseCode){
+  var codedWords = morseCode.trim().split('   ');// trim the leading and trailing spaces
+  var words = [];
 
-      return `${this.firstName} ${this.lastName}`;
-    }
+  codedWords.forEach( codedWord => words.push(getWord(codedWord)) );
+
+  return words.join(' ');
 }
 
-var logName = function(lang1, lang2) {
-    console.log('Logged:  ' + this.getFullName() + '\n' + 'Args: ' + lang1, lang2);
-};
+getWord = function(codedWord) {
+  var codedLetters = codedWord.split(' ');
+  var decodedWord = '';
 
-var languages = ['es', 'en'];
-logName.apply(person, languages);
+  codedLetters.forEach( letter => decodedWord += MORSE_CODE[ letter ] );
+
+  return decodedWord;
+}
