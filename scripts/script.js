@@ -1,15 +1,19 @@
-const averagePair = function(nums, k){
-  if ( nums.length === 0 ){return false;}
+// does str2 contain str1 characters in order?
+const isSubsequence = function(str1, str2){
+  if ( str1.length > str2.length ){ return false; }
 
-  for (let i = 0; i < nums.length - 1; i++){
-    let j = i + 1;
+  let i = 0;
+  let j = 0;
 
-    while (j < nums.length || ((i + j) / 2) <= k){
-      if ( ((i + j) / 2) === k ){
-        return true;
-      }
-      j++;
+  while ( j < str2.length ){
+    if ( str1[i] === str2[j] ){
+      i++;
     }
+
+    if ( i === str1.length ){
+      return true;
+    }
+
+    j++;
   }
-  return false;
-}
+};
