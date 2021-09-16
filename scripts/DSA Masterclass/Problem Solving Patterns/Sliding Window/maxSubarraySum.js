@@ -11,5 +11,6 @@ const maxSubarraySum = function(nums, k){
     currentMax += nums[i] - nums[i - k];
     if ( currentMax > max ) max = currentMax;
   }
+
   return max;
 };
