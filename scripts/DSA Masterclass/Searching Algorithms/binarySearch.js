@@ -31,6 +31,7 @@ console.log('7', binarySearch([5, 6, 10, 13, 14, 18, 30, 34, 35, 37, 40, 44, 64,
 
 /**
  * binary search must be sorted
+ * Big-O (1) = best case (log(n)) = worst/usual case, still very very good
  *
  *
  * use divide and conquer...
