@@ -44,3 +44,5 @@ console.log(selectionSort([15, 44, 32, 39, 24, 10, 4, 47, 3, 29, 34, 29, 43, 32,
 // Given the array arr = [1,2,3,4], you can swap values in one line now like so:
 
 // [arr[0], arr[1]] = [arr[1], arr[0]];
+
+// complexity = On^2, only ideal if I'm trying to reduce the number of total swaps/writing to memory
