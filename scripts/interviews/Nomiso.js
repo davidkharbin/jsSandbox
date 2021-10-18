@@ -36,6 +36,10 @@ const populations = [
   { id: 11, city_id: 11, amount: 212700 }
 ];
 
+
+// solution -----------------------------
+// --------------------------------------
+
 const getCountryByLargestPop = function(countries, cities, populations){
   let largestCountry = countries[0];
 
