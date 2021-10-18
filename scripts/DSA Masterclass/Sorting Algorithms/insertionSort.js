@@ -3,7 +3,7 @@ const insertionSort = (arr) => {
 	for ( let i = 1; i < arr.length; i++ ){
 		let currentVal = arr[i];
 
-		// compare second element with the one prior, swap as necessary
+		// compare element with the one prior, swap as necessary
 		let j = i - 1;
 		while ( j >= 0 && arr[j] > currentVal ){
 			arr[j+1] = arr[j];
