@@ -3,13 +3,13 @@ const mergeSort = (arr) => {
 };
 
 const sortHelper = (arrL, arrR) => {
-let results = [];
+	let results = [];
 
 	let i = 0;
 	let j = 0;
 
-	while( i < arrL.length && j < arrR.length ){
-		if ( arrL[i] < arrR[j] ){
+	while (i < arrL.length && j < arrR.length) {
+		if (arrL[i] < arrR[j]) {
 			results.push(arrL[i]);
 			i++;
 		} else {
@@ -18,14 +18,16 @@ let results = [];
 		}
 	}
 
-	if( i < j ){
-		results.push(arrL.slice(i));
+	if (i < j) {
+		results.push(...arrL.slice(i));
 	} else {
-		results.push(arrR.slice(j));
+		results.push(...arrR.slice(j));
 	}
 
 	return results;
 };
+
+console.log(sortHelper([3, 4, 5, 8,], [1, 2, 6, 7]))
 
 
 
