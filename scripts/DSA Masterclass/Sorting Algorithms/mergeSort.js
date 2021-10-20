@@ -2,38 +2,36 @@ const mergeSort = (arr) => {
 
 };
 
-const sortHelper = (arrL, arrR) => {
+const sortHelper = (leftArray, rightArray) => {
 	let results = [];
+	let leftIndex = 0;
+	let rightIndex = 0;
 
-	let i = 0;
-	let j = 0;
-
-	while (i < arrL.length && j < arrR.length) {
-		if (arrL[i] < arrR[j]) {
-			results.push(arrL[i]);
-			i++;
+	while (leftIndex < leftArray.length && rightIndex < rightArray.length) {
+		if (leftArray[leftIndex] < rightArray[rightIndex]) {
+			results.push(leftArray[leftIndex]);
+			leftIndex++;
 		} else {
-			results.push(arrR[j]);
-			j++;
+			results.push(rightArray[rightIndex]);
+			rightIndex++;
 		}
 	}
 
-	if (i < j) {
-		results.push(...arrL.slice(i));
+
+	const remainingLeftArray = [...leftArray.slice(leftIndex)];
+	const remainingRightArray = [...rightArray.slice(rightIndex)];
+
+	if (leftIndex < rightIndex) {
+		results = [...results, ...remainingLeftArray];
 	} else {
-		results.push(...arrR.slice(j));
+		results = [...results, ...remainingRightArray];
 	}
 
 	return results;
 };
 
-console.log(sortHelper([3, 4, 5, 8,], [1, 2, 6, 7]))
-
-
-
-
-
-
+console.log(sortHelper([1, 3, 5, 7, 9], [2, 4, 5, 6, 8, 10]));
+console.log(sortHelper([1, 10, 50], [2, 14, 99, 100]));
 
 
 
