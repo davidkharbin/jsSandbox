@@ -1,7 +1,3 @@
-const mergeSort = (arr) => {
-
-};
-
 const sortHelper = (leftArray, rightArray) => {
 	let results = [];
 	let leftIndex = 0;
@@ -30,9 +26,9 @@ const sortHelper = (leftArray, rightArray) => {
 	return results;
 };
 
-console.log(sortHelper([1, 3, 5, 7, 9], [2, 4, 5, 6, 8, 10]));
-console.log(sortHelper([1, 10, 50], [2, 14, 99, 100]));
+const mergeSort = (arr) => {
 
+};
 
 
 /**
