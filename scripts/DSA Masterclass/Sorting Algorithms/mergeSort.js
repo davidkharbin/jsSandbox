@@ -27,9 +27,14 @@ const sortHelper = (leftArray, rightArray) => {
 };
 
 const mergeSort = (arr) => {
-
+	if (arr.length <= 1) return arr;
+	let midPoint = Math.floor(arr.length / 2);
+	let left = mergeSort(arr.slice(0, midPoint));
+	let right = mergeSort(arr.slice(midPoint));
+	return sortHelper(left, right);
 };
 
+console.log(mergeSort([2, 6, 1, 3, 6, 3, 10, 24, 76, 73]));
 
 /**
  *
