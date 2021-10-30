@@ -36,6 +36,8 @@ const mergeSort = (arr) => {
 
 console.log(mergeSort([2, 6, 1, 3, 6, 3, 10, 24, 76, 73]));
 
+
+
 /**
  *
  * ==========NOTES==========
@@ -50,6 +52,10 @@ console.log(mergeSort([2, 6, 1, 3, 6, 3, 10, 24, 76, 73]));
  * It should create a new array which is sorted, consisting of all input elements
  * It should not modify it's parameters
  *
+ *
+ * =========BIG - O=============
+ * log(n) (2 of what power gives us n?)  32 = 2^5
+ * no edgecase of being partially sorted initially, like other sorts
  *
  *
  *==========PSEUDOCODE==========
