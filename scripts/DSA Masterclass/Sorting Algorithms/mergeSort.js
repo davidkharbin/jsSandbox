@@ -55,6 +55,7 @@ console.log(mergeSort([2, 6, 1, 3, 6, 3, 10, 24, 76, 73]));
  *
  * =========BIG - O=============
  * log(n) (2 of what power gives us n?)  32 = 2^5
+ * space complexity = O(n)...more than other sorts
  * no edgecase of being partially sorted initially, like other sorts
  *
  *
