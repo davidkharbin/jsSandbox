@@ -1,2 +1,4 @@
 Bubble, selection, insertion sort are all roughly the same:
 	- all time complexities are quadratic (worst case)
+
+quickSort needs review
