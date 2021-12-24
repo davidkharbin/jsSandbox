@@ -55,17 +55,31 @@ class SinglyLinkedList {
 		let currentHead = this.head;
 		this.head = currentHead.next;
 		this.length--;
+
 		if (this.length === 0) this.tail = null;
+
 		return currentHead;
+	}
+
+	unshift(value) {
+		let node = new Node(value);
+
+		if (this.length === 0) {
+			this.head = node;
+			this.tail = node;
+		}
+		else {
+			node.next = this.head;
+			this.head = node;
+		}
+		this.length++;
 	}
 }
 
-// var ll = new SinglyLinkedList();
+var ll = new SinglyLinkedList();
 
-// ll.push(1)
-// ll.push(2)
-// ll.push(3)
-// ll.push(4)
-// ll.push(5)
-// ll.push(6)
+ll.push(1)
+ll.push(2)
+ll.push(3)
+ll.push(4)
 
