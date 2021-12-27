@@ -74,7 +74,45 @@ class SinglyLinkedList {
 		}
 		this.length++;
 	}
+
+	get(index) {
+		if (index < 0 || index >= this.length) return null;
+
+		let counter = 0;
+		let current = this.head;
+		while (counter !== index) {
+			current = current.next;
+			counter++;
+		}
+		return current;
+	}
+
+	set(index, value) {
+		let setNode = this.get(index);
+		if (setNode === null) return false;
+
+		setNode.value = value;
+		return true;
+	}
+
+	insert(index, value) {
+		if (index < 0 || index > this.length) return false;
+		if (index ===  this.length) this.push(value);
+		if (index === 0) this.unshift(value);
+	
+		let newNode = new Node(value);
+		let prevNode = this.get(index - 1);
+		let cache = prevNode.next;
+
+		prevNode.next = newNode;
+		newNode.next = cache;
+
+		this.length++;
+		return true;
+	}
 }
+
+
 
 var ll = new SinglyLinkedList();
 
