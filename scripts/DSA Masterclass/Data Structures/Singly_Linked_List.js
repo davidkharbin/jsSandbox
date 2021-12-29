@@ -98,9 +98,9 @@ class SinglyLinkedList {
 
 	insert(index, value) {
 		if (index < 0 || index > this.length) return false;
-		if (index ===  this.length) return !!this.push(value);
+		if (index === this.length) return !!this.push(value);
 		if (index === 0) return !!this.unshift(value);
-	
+
 		let newNode = new Node(value);
 		let prevNode = this.get(index - 1);
 		let cache = prevNode.next;
@@ -112,31 +112,39 @@ class SinglyLinkedList {
 		return true;
 	}
 
-	remove(index){
+	remove(index) {
 		if (index < 0 || index >= this.length) return undefined;
 		if (index === this.length - 1) return this.pop();
 		if (index === 0) return this.shift();
 
 		let prevNode = this.get(index - 1);
 		let removed = prevNode.next;
-		
+
 		prevNode.next = removed.next;
 		this.length--;
 
 		return removed;
 	}
 
-	print(){
+	reverse() {
+		let cacheNode = this.head;
+		this.head = this.tail;
+		this.tail = cacheNode;
+
+
+	}
+
+	print() {
 		let arr = [];
 		let current = this.head;
-		while(current){
+		while (current) {
 			arr.push(current.value);
 			current = current.next;
 		}
 		console.log(arr);
 	}
 
-	
+
 }
 
 
