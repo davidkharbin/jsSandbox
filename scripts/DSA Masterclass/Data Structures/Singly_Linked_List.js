@@ -131,7 +131,15 @@ class SinglyLinkedList {
 		this.head = this.tail;
 		this.tail = cacheNode;
 
-
+		let next;
+		let prev = null;
+		
+		for (let i = 0; i < this.length; i++){
+			next = cacheNode.next;
+			cacheNode.next = prev;
+			prev = cacheNode;
+			cacheNode = next;
+		}
 	}
 
 	print() {
@@ -143,8 +151,6 @@ class SinglyLinkedList {
 		}
 		console.log(arr);
 	}
-
-
 }
 
 
