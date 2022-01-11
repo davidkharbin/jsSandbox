@@ -19,7 +19,6 @@ class DoublyLinkedList {
 			this.head = newNode;
 			this.tail = newNode;
 		} else {
-			let temp = this.tail;
 			this.tail.next = newNode;
 			newNode.prev = this.tail;
 			this.tail = newNode;
