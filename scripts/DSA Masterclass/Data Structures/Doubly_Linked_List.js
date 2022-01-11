@@ -33,6 +33,7 @@ class DoublyLinkedList {
 
 		let value = this.tail.value;
 		this.tail.prev.next = null;
+		this.length--;
 		return value;
 	}
 }
