@@ -30,10 +30,10 @@ class DoublyLinkedList {
 	pop() {
 		if (this.length === 0) return undefined;
 
-		let value = this.tail.value;
+		let node = this.tail;
 		this.tail.prev.next = null;
 		this.length--;
-		return value;
+		return node;
 	}
 }
 var dll = new DoublyLinkedList();
