@@ -27,6 +27,14 @@ class DoublyLinkedList {
 		this.length++;
 		return this;
 	}
+
+	pop() {
+		if (this.length === 0) return this;
+
+		let value = this.tail.value;
+		this.tail.prev.next = null;
+		return value;
+	}
 }
 var dll = new DoublyLinkedList();
 dll.push(1)
