@@ -28,7 +28,7 @@ class DoublyLinkedList {
 	}
 
 	pop() {
-		if (this.length === 0) return this;
+		if (this.length === 0) return undefined;
 
 		let value = this.tail.value;
 		this.tail.prev.next = null;
