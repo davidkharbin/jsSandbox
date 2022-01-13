@@ -60,6 +60,23 @@ class DoublyLinkedList {
 		this.length--;
 		return firstNode;
 	}
+
+	unshift(value) {
+		let newNode = new Node(value);
+
+		if (this.length === 0) {
+			this.head = newNode;
+			this.tail = newNode;
+			this.length++;
+			return this;
+		}
+
+		newNode.next = this.head;
+		this.head.prev = newNode;
+		this.head = newNode;
+		this.length++;
+		return this;
+	}
 }
 var dll = new DoublyLinkedList();
 dll.push(1)
