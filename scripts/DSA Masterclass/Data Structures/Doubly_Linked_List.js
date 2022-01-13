@@ -77,12 +77,41 @@ class DoublyLinkedList {
 		this.length++;
 		return this;
 	}
+
+	get(index) {
+		if (index < 0 || index >= this.length) return null;
+		let midpoint = this.length / 2;
+
+		if (index < midpoint) {
+			let counter = 0;
+			let node = this.head;
+			while (counter <= index) {
+				if (counter === index) return node;
+				node = node.next;
+				counter++;
+			}
+		} else {
+			let counter = this.length - 1;
+			let node = this.tail;
+			while (counter >= midpoint) {
+				if (counter === index) return node;
+				node = node.prev;
+				counter--;
+			}
+		}
+	}
 }
 var dll = new DoublyLinkedList();
 dll.push(1)
 dll.push(2)
 dll.push(3)
 dll.push(4)
+dll.push(5)
+dll.push(6)
+dll.push(7)
+dll.push(8)
+dll.push(9)
+dll.push(10)
 
 
 module.exports = { Node, DoublyLinkedList }
