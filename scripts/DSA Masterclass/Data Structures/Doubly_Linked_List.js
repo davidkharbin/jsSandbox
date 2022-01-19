@@ -11,7 +11,7 @@ class DoublyLinkedList {
 		this.head = null;
 		this.tail = null;
 		this.length = 0;
-	}
+	};
 
 	push(value) {
 		let newNode = new Node(value);
@@ -25,7 +25,7 @@ class DoublyLinkedList {
 		}
 		this.length++;
 		return this;
-	}
+	};
 
 	pop() {
 		if (this.length === 0) return undefined;
@@ -42,7 +42,7 @@ class DoublyLinkedList {
 		}
 		this.length--;
 		return lastNode;
-	}
+	};
 
 	shift() {
 		if (this.length === 0) return undefined;
@@ -59,7 +59,7 @@ class DoublyLinkedList {
 		}
 		this.length--;
 		return firstNode;
-	}
+	};
 
 	unshift(value) {
 		let newNode = new Node(value);
@@ -76,7 +76,7 @@ class DoublyLinkedList {
 		this.head = newNode;
 		this.length++;
 		return this;
-	}
+	};
 
 	get(index) {
 		if (index < 0 || index >= this.length) return null;
@@ -99,7 +99,7 @@ class DoublyLinkedList {
 				counter--;
 			}
 		}
-	}
+	};
 
 	set(index, value) {
 		let node = this.get(index);
@@ -129,10 +129,30 @@ class DoublyLinkedList {
 
 		this.length++;
 		return true;
-	}
+	};
+
+	remove(index){
+		if (index < 0 || index >= this.length) return undefined;
+		if (index === 0) return this.shift();
+		if (index === this.length - 1) return this.pop();
+
+		let deleteNode = this.get(index);
+		let prevNode = deleteNode.prev;
+		let nextNode = deleteNode.next;
+
+		prevNode.next = nextNode;
+		nextNode.prev = prevNode;
+
+		deleteNode.prev = null;
+		deleteNode.next = null;
+		
+		this.length--;
+		return deleteNode;
+	};
 }
 
 var dll = new DoublyLinkedList();
+dll.push(0)
 dll.push(1)
 dll.push(2)
 dll.push(3)
