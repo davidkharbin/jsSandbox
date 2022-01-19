@@ -112,28 +112,26 @@ class DoublyLinkedList {
 
 	insert(index, value) {
 		if (index < 0 || index > this.length) return false;
-
-		if (index === 0) {
-			this.unshift(value);
-			return true;
-		}
-		if (index === this.length - 1) {
-			this.push(value);
-			return true;
-		}
+		if (index === 0) return !!this.unshift(value);
+		if (index === this.length - 1) return !!this.push(value);
 
 		let newNode = new Node(value);
 		let prevNode = this.get(index - 1);
+		let nextNode = prevNode.next;
 
-		prevNode.next.prev = newNode;
-		newNode.next = prevNode.next;
+		// both connections b/w insertion node and it's previous node
 		prevNode.next = newNode;
 		newNode.prev = prevNode;
-		this.length++;
 
+		// both connections b/w insertion node and it's next node
+		newNode.next = nextNode;
+		nextNode.prev = newNode;
+
+		this.length++;
 		return true;
 	}
 }
+
 var dll = new DoublyLinkedList();
 dll.push(1)
 dll.push(2)
