@@ -101,14 +101,37 @@ class DoublyLinkedList {
 		}
 	}
 
-	set(index, value){
+	set(index, value) {
 		let node = this.get(index);
 		if (node) {
 			node.value = value;
 			return true;
 		}
-
 		return false;
+	}
+
+	insert(index, value) {
+		if (index < 0 || index > this.length) return false;
+
+		if (index === 0) {
+			this.unshift(value);
+			return true;
+		}
+		if (index === this.length - 1) {
+			this.push(value);
+			return true;
+		}
+
+		let newNode = new Node(value);
+		let prevNode = this.get(index - 1);
+
+		prevNode.next.prev = newNode;
+		newNode.next = prevNode.next;
+		prevNode.next = newNode;
+		newNode.prev = prevNode;
+		this.length++;
+
+		return true;
 	}
 }
 var dll = new DoublyLinkedList();
