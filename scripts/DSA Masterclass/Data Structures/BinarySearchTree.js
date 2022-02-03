@@ -14,16 +14,18 @@ class BinarySearchTree {
 
 	insert(value) {
 		let newNode = new Node(value);
+		let currentNode = this.root;
+		let goLeft, goRight, areEqual;
+
 		if (!this.root) {
 			this.root = newNode;
 			return this;
 		}
 
-		let currentNode = this.root;
 		while (true) {
-			let goLeft = newNode.value < currentNode.value;
-			let goRight = newNode.value > currentNode.value;
-			let areEqual = newNode.value === currentNode.value;
+			goLeft = newNode.value < currentNode.value;
+			goRight = newNode.value > currentNode.value;
+			areEqual = newNode.value === currentNode.value;
 
 			if (goLeft) {
 				if (!currentNode.left) {
@@ -33,6 +35,7 @@ class BinarySearchTree {
 					currentNode = currentNode.left;
 				}
 			}
+
 			if (goRight) {
 				if (!currentNode.right) {
 					currentNode.right = newNode;
@@ -41,6 +44,7 @@ class BinarySearchTree {
 					currentNode = currentNode.right;
 				}
 			}
+
 			if (areEqual) {
 				currentNode.count++;
 				return 'duplicate added';
@@ -50,12 +54,14 @@ class BinarySearchTree {
 
 	find(value) {
 		if (!this.root) return false;
-
+		
 		let currentNode = this.root;
+		let less, greater, found;
+
 		while (true) {
-			let less = value < currentNode.value;
-			let greater = value > currentNode.value;
-			let found = value === currentNode.value;
+			less = value < currentNode.value;
+			greater = value > currentNode.value;
+			found = value === currentNode.value;
 
 			if (found) return true;
 
