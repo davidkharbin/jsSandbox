@@ -51,10 +51,9 @@ class BinarySearchTree {
 			}
 		}
 	}
-
 	find(value) {
 		if (!this.root) return false;
-		
+
 		let currentNode = this.root;
 		let less, greater, found;
 
@@ -63,7 +62,7 @@ class BinarySearchTree {
 			greater = value > currentNode.value;
 			found = value === currentNode.value;
 
-			if (found) return true;
+			if (found) return currentNode;
 
 			if (less) {
 				if (currentNode.left) {
@@ -83,6 +82,9 @@ class BinarySearchTree {
 		}
 	}
 
+	contains(value) {
+		return !!this.find(value);
+	}
 }
 
 var tree = new BinarySearchTree();
