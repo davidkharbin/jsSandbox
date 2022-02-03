@@ -41,9 +41,38 @@ class BinarySearchTree {
 					currentNode = currentNode.right;
 				}
 			}
-			if (areEqual){
+			if (areEqual) {
 				currentNode.count++;
 				return 'duplicate added';
+			}
+		}
+	}
+
+	find(value) {
+		if (!this.root) return false;
+
+		let currentNode = this.root;
+		while (true) {
+			let less = value < currentNode.value;
+			let greater = value > currentNode.value;
+			let found = value === currentNode.value;
+
+			if (found) return true;
+
+			if (less) {
+				if (currentNode.left) {
+					currentNode = currentNode.left;
+				} else {
+					return false;
+				}
+			}
+
+			if (greater) {
+				if (currentNode.right) {
+					currentNode = currentNode.right;
+				} else {
+					return false;
+				}
 			}
 		}
 	}
