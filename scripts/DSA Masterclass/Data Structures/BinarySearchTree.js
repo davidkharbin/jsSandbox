@@ -1,4 +1,4 @@
-class Node {
+class TreeNode {
 	constructor(value) {
 		this.count = 1;
 		this.left = null;
@@ -13,7 +13,7 @@ class BinarySearchTree {
 	}
 
 	insert(value) {
-		let newNode = new Node(value);
+		let newNode = new TreeNode(value);
 		let currentNode = this.root;
 		let goLeft, goRight, areEqual;
 
@@ -51,6 +51,7 @@ class BinarySearchTree {
 			}
 		}
 	}
+
 	find(value) {
 		if (!this.root) return false;
 
@@ -85,9 +86,24 @@ class BinarySearchTree {
 	contains(value) {
 		return !!this.find(value);
 	}
+
+	breathFirstSearch() {
+		let node = this.root;
+		let data = [];
+		let queue = new Queue();
+		queue.enqueue(node);
+		while (queue.size > 0) {
+			let val = queue.first.value.value;
+			data.push(val);
+			node = queue.dequeue();
+			if (node.value.left) queue.enqueue(node.value.left);
+			if (node.value.right) queue.enqueue(node.value.right);
+		}
+		return data;
+	}
 }
 
-var tree = new BinarySearchTree();
+let tree = new BinarySearchTree();
 tree.insert(10)
 tree.insert(5)
 tree.insert(13)

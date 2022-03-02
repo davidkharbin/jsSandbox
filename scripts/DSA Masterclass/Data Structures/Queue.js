@@ -1,4 +1,4 @@
-class Node {
+class QueueNode {
 	constructor(value){
 		this.value = value;
 		this.next = null;
@@ -13,7 +13,7 @@ class Queue {
 	}
 
 	enqueue(value) {
-		let newNode = new Node(value);
+		let newNode = new QueueNode(value);
 
 		if (this.size === 0){
 			this.first = newNode;
@@ -22,9 +22,8 @@ class Queue {
 			this.last.next = newNode;
 			this.last = newNode;
 		}
-
 		this.size++;
-		return this;
+		return newNode;
 	}
 
 	dequeue(){
@@ -45,7 +44,7 @@ class Queue {
 	}
 }
 
-var q = new Queue();
+let q = new Queue();
 
 q.enqueue(0);
 q.enqueue(1);
