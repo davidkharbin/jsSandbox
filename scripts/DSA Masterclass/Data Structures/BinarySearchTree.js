@@ -6,16 +6,16 @@ class QueueNode {
 }
 
 class Queue {
-	constructor(){
+	constructor() {
 		this.first = null;
 		this.last = null;
 		this.size = 0;
 	}
-	
+
 	enqueue(value) {
 		let newNode = new QueueNode(value);
-		
-		if (this.size === 0){
+
+		if (this.size === 0) {
 			this.first = newNode;
 			this.last = newNode;
 		} else {
@@ -25,12 +25,12 @@ class Queue {
 		this.size++;
 		return newNode;
 	}
-	
-	dequeue(){
+
+	dequeue() {
 		if (this.size === 0) return null;
-		
-	  let cache = this.first;
-		if (this.size === 1){
+
+		let cache = this.first;
+		if (this.size === 1) {
 			this.first = null;
 			this.last = null;
 			this.size--;
@@ -138,7 +138,7 @@ class BinarySearchTree {
 		let data = [];
 		let queue = new Queue();
 		queue.enqueue(node);
-		
+
 		while (queue.size > 0) {
 			let val = queue.first.value.value;
 			data.push(val);
@@ -147,6 +147,10 @@ class BinarySearchTree {
 			if (node.value.right) queue.enqueue(node.value.right);
 		}
 		return data;
+	}
+
+	depthFirstSearchPreOrder() {
+		
 	}
 }
 
